@@ -1,0 +1,19 @@
+@model ToDoList.Web.Models.Task
+
+@{
+    ViewBag.Title = "Tasks";
+    Layout = "_Layout";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Task", FormMethod.Post))
+{
+    <p>
+        <label>Task name:</label>
+        @Html.TextBoxFor(model=>model.TaskName)
+    </p>
+    <p>
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </p>
+}
